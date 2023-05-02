@@ -3,12 +3,19 @@ package スッキリJava;
 public class Main {
 
 	public static void main(String[] args) {
+//		剣の生成
+		Sword s = new Sword();
+//		フィールドに初期値をセット
+		s.name = "炎の剣";
+		s.damage = 10;
+		
 //		勇者の生成
 		Hero h = new Hero();
 //		フィールドに初期値をセット
 		h.name = "ミナト";
 		h.hp = 100;
-//		System.out.println("勇者" + h.name + "を生み出しました！");
+		h.sword = s;
+		System.out.println("現在の武器は" + h.sword.name);
 		
 //		お化けキノコAの生成
 		Matango m1 = new Matango();
@@ -28,7 +35,7 @@ public class Main {
 		h.slip();
 		m1.run();
 		m2.run();
-		
+		h.attack();
 	}
 
 }

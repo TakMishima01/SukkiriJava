@@ -4,8 +4,12 @@ public class Hero {
 //	属性の定義
 	String name;
 	int hp;
+	Sword sword;
 //	操作の定義
-	public void attack() {}
+	public void attack() {
+		System.out.println(this.name + "は"+ this.sword.name +"で攻撃した！");
+		System.out.println("敵に５ポイントのダメージをあたえた！");
+	}
 	public void sleep() {
 		this.hp = 100;
 		System.out.println(this.name + "は、眠って回復した！");
