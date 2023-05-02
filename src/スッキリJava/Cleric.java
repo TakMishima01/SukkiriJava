@@ -1,5 +1,7 @@
 package スッキリJava;
 
+import java.util.Random;
+
 public class Cleric {
 //	属性の定義
 	String name;
@@ -15,17 +17,16 @@ public class Cleric {
 		this.mp -= 5;
 		System.out.println("HPが最大まで回復した");
 	}
-	public void pray(int sec) {
+	public int pray(int sec) {
 		System.out.println(this.name + "は" + sec + "秒間点に祈った！");
 		
 //		理論上の回復量を乱数を用いて決定する
-		int correction = new java.util.Random().nextInt(3);
-		int p = sec + correction;
+		int recover = new Random().nextInt(3) + sec;
+//		実際の回復量を計算する
+		int recoverActual = Math.min(this.MAX_MP - this.mp, recover);
 		
-		if (this.mp + p > this.MAX_MP) {
-			this.mp = this.MAX_MP;
-		} else {
-			this.mp = this.mp + p;
-		}
+		this.mp += recoverActual;
+		System.out.println("MPが" + recoverActual + "回復した");
+		return recoverActual;
 	}
 }
