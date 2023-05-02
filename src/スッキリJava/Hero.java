@@ -5,6 +5,15 @@ public class Hero {
 	String name;
 	int hp;
 	Sword sword;
+//	コンストラクタ定義
+	public Hero(String name) {
+		this.hp = 100;
+		this.name = name;
+	}
+//	コンストラクタのオーバーロード
+	public Hero() {
+		this( "ダミー");
+	}
 //	操作の定義
 	public void attack() {
 		System.out.println(this.name + "は"+ this.sword.name +"で攻撃した！");

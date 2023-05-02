@@ -9,13 +9,27 @@ public class Main {
 		s.name = "炎の剣";
 		s.damage = 10;
 		
-//		勇者の生成
-		Hero h = new Hero();
+//		勇者1の生成
+		Hero h1 = new Hero("ミナト");
 //		フィールドに初期値をセット
-		h.name = "ミナト";
-		h.hp = 100;
-		h.sword = s;
-		System.out.println("現在の武器は" + h.sword.name);
+		h1.sword = s;
+		System.out.println("現在の武器は" + h1.sword.name);
+		System.out.println(h1.hp);
+//		勇者2の生成
+		Hero h2 = new Hero();
+//		フィールドに初期値をセット
+		h2.sword = s;
+		System.out.println("現在の武器は" + h2.sword.name);
+		
+//		ウィザードの生成
+		Wizard w = new Wizard();
+//		フィールドの初期化
+		w.name = "スガワラ";
+		w.hp = 50;
+//		メソッドの呼び出し
+		w.heal(h1);
+		w.heal(h2);
+		w.heal(h2);
 		
 //		お化けキノコAの生成
 		Matango m1 = new Matango();
@@ -32,10 +46,10 @@ public class Main {
 //		h.run();
 		
 //		冒険のはじまり
-		h.slip();
+		h1.slip();
 		m1.run();
 		m2.run();
-		h.attack();
+		h2.attack();
 	}
 
 }
