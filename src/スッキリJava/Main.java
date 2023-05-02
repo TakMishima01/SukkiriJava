@@ -28,7 +28,7 @@ public class Main {
 		h.slip();
 		m1.run();
 		m2.run();
-		h.run();
+		
 	}
 
 }
